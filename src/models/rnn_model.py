@@ -1,0 +1,47 @@
+import torch
+import torch.nn as nn
+
+class RNNModel(nn.Module):
+    def __init__(self, vocab_size, embed_dim, hidden_dim, n_layers, dropout):
+        super(RNNModel, self).__init__()
+
+        self.embedding = nn.Embedding(
+            num_embeddings=vocab_size,
+            embedding_dim=embed_dim,
+            padding_idx=0       
+        )
+
+        self.rnn = nn.RNN(
+            input_size=embed_dim,
+            hidden_size=hidden_dim,
+            num_layers=n_layers,
+            batch_first=True,
+            dropout=dropout if n_layers > 1 else 0,
+            nonlinearity='tanh'
+        )
+
+        self.dropout    = nn.Dropout(dropout)
+        self.classifier = nn.Linear(hidden_dim, 1)
+
+    def forward(self, x):
+        embedded = self.dropout(self.embedding(x))   
+        output, hidden = self.rnn(embedded)          
+        last_hidden = hidden[-1]                    
+        return self.classifier(self.dropout(last_hidden)).squeeze(1)
+
+
+if __name__ == "__main__":
+    model = RNNModel(
+        vocab_size=20002,
+        embed_dim=128,
+        hidden_dim=256,
+        n_layers=2,
+        dropout=0.3
+    )
+
+    print(model)
+    print(f"\nTotal parameters: {sum(p.numel() for p in model.parameters()):,}")
+
+    dummy = torch.randint(0, 20000, (64, 200))
+    out   = model(dummy)
+    print(f"Output shape: {out.shape}")   
