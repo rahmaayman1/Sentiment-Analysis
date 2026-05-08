@@ -5,3 +5,4 @@ data/processed/
 data/raw/
 models/rnn/best_rnn.pt
 models/baseline/
+notebooks/
