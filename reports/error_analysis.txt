@@ -1,0 +1,113 @@
+============================================================
+ERROR ANALYSIS — BASELINE
+============================================================
+
+Total errors : 500 / 4940
+Accuracy     : 0.8988
+
+Error breakdown:
+label_name  predicted_name
+negative    positive          278
+positive    negative          222
+
+============================================================
+HIGH CONFIDENCE MISTAKES (top 10)
+============================================================
+
+True      : positive
+Predicted : negative
+Confidence: 0.97
+Text      : **SPOILERS AHEAD**It is really unfortunate that a movie so well produced turns out to besuch a disappointment. I thought this was full of (silly) clichés andthat it basically tried to hard. To the (American) guys out there: how many of you spend yourtime jumping on your girlfriend's bed and making m
+------------------------------------------------------------
+
+True      : positive
+Predicted : negative
+Confidence: 0.97
+Text      : This was Laurel and Hardy's last silent film for Roach Studios. However, since the public had a real thirst for "talkies", this same short was re-made by the team just a few years later with only a few small plot changes. LAUGHING GRAVY was essentially the same plot except that Stan and Ollie were t
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.97
+Text      : I went to see this 3 nights ago here in Cork, Ireland. It was the world premiere of it, in the tiny cinema in the Triskel Arts Centre as part of the Cork Film Festival.I found "Strange Fruit" to be an excellent movie. It is a bit rough around the edges, but for a low-budget movie that is to be expec
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.97
+Text      : I think it's a great movie!! It's fun, maybe a little unrealistic, but fun and dramatic!! I would like to see it again, if they were showing it in TV!! Just 1 question: Are we still talking about the same movie???
+------------------------------------------------------------
+
+True      : positive
+Predicted : negative
+Confidence: 0.95
+Text      : Unfortunately many consumers who write reviews for IMDb equate low budget with not good. Whatever else this movie might need, more budget really isn't part of it. Big sets and lots of special effects would have turned it into another Lara Croft movie. What we have here is a step or two better than t
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.94
+Text      : I first saw this movie at a Saturday matinee when I was very young. I thought it was cool and often thought about it. Well I finally resaw it on DVD. It was still very entertaining but in a different way. It has to rank as one of the goofiest, campiest, 1950's sci-fi movies. It seemed filled with st
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.94
+Text      : I saw Winnie's Heffalump a couple of days ago. A nice story based on well known characters created by A.A.Milne. Although Winnie, Piglet, Tigger and Rabbit are all present in this animated feature, the main character is Roo this time. He befriends with scary Heffalump who proves to be not scary at a
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.93
+Text      : Boston legal has turned its tail and is headed for the barn door and th pig slop it has created! When this show first aired almost four season back it was a humorous slap at the legal system which all actors seem to take pride in portraying. It was funny, diversified, and to some extent factual. The
+------------------------------------------------------------
+
+True      : positive
+Predicted : negative
+Confidence: 0.93
+Text      : This movie is horrible- in a 'so bad it's good' kind of way.The storyline is rehashed from so many other films of this kind, that I'm not going to even bother describing it. It's a sword/sorcery picture, has a kid hoping to realize how important he is in this world, has a "nomadic" adventurer, an ev
+------------------------------------------------------------
+
+True      : positive
+Predicted : negative
+Confidence: 0.93
+Text      : We have to remember that the 50's were practically a blank slate when it came to movies. Hollywood was in transition from patriotic war movies, noir, two reel oaters, etc to movies with a message. We had Blackboard Jungle, On the Waterfront and so on. Some folks might think that was an improvement. 
+------------------------------------------------------------
+
+============================================================
+TOP WORDS → POSITIVE
+============================================================
+  great                          7.207
+  excellent                      6.474
+  perfect                        5.340
+  wonderful                      5.148
+  amazing                        4.778
+  today                          4.380
+  brilliant                      4.247
+  hilarious                      4.190
+  the best                       3.976
+  fun                            3.920
+  loved                          3.751
+  best                           3.668
+  superb                         3.622
+  especially                     3.581
+  enjoyed                        3.534
+
+============================================================
+TOP WORDS → NEGATIVE
+============================================================
+  worst                          -8.224
+  bad                            -7.607
+  awful                          -7.506
+  boring                         -6.657
+  the worst                      -6.353
+  poor                           -6.302
+  terrible                       -6.139
+  waste                          -6.015
+  horrible                       -4.978
+  nothing                        -4.964
+  dull                           -4.930
+  poorly                         -4.661
+  worse                          -4.601
+  stupid                         -4.336
+  annoying                       -4.221
