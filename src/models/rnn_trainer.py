@@ -89,8 +89,8 @@ def main():
     print(f"\n=== Test Accuracy: {test_acc:.4f} ===")
 
     # ===== Save Report =====
-    os.makedirs("reports", exist_ok=True)
-    with open("reports/rnn_results.txt", "w", encoding="utf-8") as f:
+    os.makedirs("reports/rnn", exist_ok=True)
+    with open("reports/rnn/rnn_results.txt", "w", encoding="utf-8") as f:
         f.write("=" * 60 + "\n")
         f.write("RNN TRAINING RESULTS\n")
         f.write("=" * 60 + "\n\n")
@@ -119,7 +119,7 @@ def main():
         f.write(f"  Test Loss          : {test_loss:.4f}\n")
         f.write(f"  Test Accuracy      : {test_acc:.4f}\n")
 
-    print("\n Saved to reports/rnn_results.txt")
+    print("\n Saved to reports/rnn/rnn_results.txt")
 
 if __name__ == "__main__":
     main()
