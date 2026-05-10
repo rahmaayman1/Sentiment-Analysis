@@ -1,0 +1,84 @@
+============================================================
+ERROR ANALYSIS — LSTM
+============================================================
+
+Total test samples : 5000
+Total errors       : 710
+Accuracy           : 0.8580
+
+============================================================
+Error breakdown:
+============================================================
+label_name  predicted_name
+negative    positive          458
+positive    negative          252
+
+============================================================
+HIGH CONFIDENCE MISTAKES (top 10)
+============================================================
+
+True      : negative
+Predicted : positive
+Confidence: 0.9840
+Text      : Welcome to Our Town, welcome to your town? As we are introduced into the worlds of its townsfolk of 1901 America, this three act play is opened before us with the help of "The Stage Manager", a visual narrator if you like. After his initial introductions, we are lead into the homes of two particular
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9836
+Text      : I really enjoyed the film. It was really cheesy at times. (They destroy the villain with hair driers--but where are they plugged in?) It's a unique film though, and I enjoyed the acting of Courtney Draper and Tamara Hope. I also enjoyed Fanuel (however you write it...) liking Megan's charecter becau
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9825
+Text      : "Changi" is an Australian comedy/drama set in the World War 2 Japanese prisoner of war camp of that name. The story cuts between past events, and the present day, when the aged veterans plan a reunion. This is a much publicised and controversial miniseries, here in Australia. The budget ran over ($6
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9818
+Text      : World War I gets a glossy, sepia-tinted makeover in Jean-Pierre Jeunet's relentlessly whimsical "A Very Long Engagement". Jeunet's trademark style consists of mechanical, almost clockwork-like narrative construction garnished with lavish, chocolate box production values and seasoned with faux-naive 
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9808
+Text      : This show is awesome and we have been enjoying it thoroughly. Set in Alaska, I don't agree with the homosexual content on tonight's show. I feel that you are pushing too hard to bring New York to Alaska. Its one thing to have a New Yorker struggling in the Alaska wild, but to try to turn the Alaska 
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9806
+Text      : Why does the poster & artwork say "Clubbed is one of the best UK indie films I have seen in a very long time. SCREEN INTERNATIONAL" when it was a quote of the French distributor REPORTED by Screen International (an influential film trade publication). See www.screendaily.com/ScreenDailyArticle.aspx?
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9799
+Text      : It is enjoyable and fast-paced. There is no way on Earth that the actor playing Mat could be eighteen. However, the main thing is that he does act eighteen very convincingly. It must be a credit to his audition that he convinced them to cast him. I quite soon accepted him as being a naive young coun
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9799
+Text      : Office work, especially in this era of computers, multi-functional copy machines, e-mail, voice mail, snail mail and `temps,' is territory ripe with satirical possibilities, a vein previously tapped in such films as `Clockwatchers' and `Office Space,' and very successfully. This latest addition to t
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9773
+Text      : First off, anyone who thinks this sequel to William Friedkin's "The French Connection", is superior is most definitely completely insane or moronic or both. The problem with reviewing this film is that, a.) it's a sequel to a brilliant movie, which always makes watching it objectively difficult, and
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9773
+Text      : "Black Vengeance" is an alternate title for "Ying hung ho hon" AKA "Tragic Hero" (1987). I have just seen this on VHS, together with the first part of the story, "Gong woo ching" ("Rich and Famous"), also 1987. (The poster and 2 stills featured on the page are for a 4-DVD set of movies starring Rod 
+------------------------------------------------------------
+
+============================================================
+COMPARISON WITH RNN
+============================================================
+  RNN  Accuracy : 0.5057  ← Vanishing gradient
+  LSTM Accuracy : 0.8580  ← Gates solve the problem
