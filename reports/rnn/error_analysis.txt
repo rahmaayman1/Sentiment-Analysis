@@ -1,0 +1,85 @@
+============================================================
+ERROR ANALYSIS — RNN
+============================================================
+
+Total test samples : 4940
+Total errors       : 2442
+Accuracy           : 0.5057
+
+============================================================
+Error breakdown:
+============================================================
+label_name  predicted_name
+negative    positive           438
+positive    negative          2004
+
+============================================================
+HIGH CONFIDENCE MISTAKES (top 10)
+============================================================
+
+True      : negative
+Predicted : positive
+Confidence: 0.6315
+Text      : MONSTER - He was great; I loved the special-effects which created this monster which looked like an updated version of "The Creature From the Black Lagoon." The scenes with this beast roaming the land and capturing people ranged from good to jaw-dropping.SOCIAL COMMENTARY: Much of the story takes pl
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.6180
+Text      : Zzzzzzzzzzzz. This one came directly from the "Jaws" cookie-cutter mold, with some other bizarre cliches thrown in for good measure. I was interested in seeing this after finding a still from it in a book about Italian horror films, and wow...I guess I got what I deserved!Very slow-moving and talky,
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.6099
+Text      : This is definitely the worst bigfoot movie I've ever seen and quite possibly the overall worst movie I've ever seen in my life. The actors and actresses were horrible and it seemed like they were trying way too hard to play their roles as dorks, tough guys, jerks, know it alls, etc. And the bigfoot 
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.6090
+Text      : Occasionally one is served a new entrée from foreign films. That is their great attraction. They take from life and serve it up raw. American films, rarely dare to touch the forbidden subjects of society. Too many hang-ups and a morbid fear of financial failure. The Almighty dollar, determines their
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.6068
+Text      : "Rois et Reine" is a sprawling mess of a movie which will probably irritate as many viewers as it delights. It focuses by turns on ex-lovers Nora (Emanuelle Devos)and Ismael (Mathieu Amalric) as they each confront a major crisis in their now separate lives. While Nora's story is played straight and 
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.6040
+Text      : French Cinema sucks! Down with all these psychiotric visions with their my-God-am-I-cultivated distinguished attitudes! Pestilence to conceited symbolic film-language and impervious chiffres! I'll no longer have a mind for that! Léos Carax, did you ever think about, that a dialogue in a film could b
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.6033
+Text      : I can barely find the words to describe how much this piece of trash offended me. Why is it that American filmmakers always go out of there way to portray Jamaicans as a bunch of backwards ass bush babies and worse yet, cast people to play Jamaicans who sound utterly ridiculous when they try to imit
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.5973
+Text      : "So there's this bride, you see, and she gets crushed to death by this statue that falls on her on the day of her wedding. Then, get this, a year later, her former fiancé falls in love with a beautiful psychic and then, that beautiful psychic gets haunted by the ghost of the disgruntled dead bride w
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.5965
+Text      : OK, first of all, Steve Irwin, rest in peace. You were loved by many fans. Now...this movie wasn't a movie at all. It was "The Crocodile Hunter" TV program with bad acting, bad scripts, and bad directing in between Steve capturing or teaching us about animals. He was entertaining as an animal seeker
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.5965
+Text      : I know that some films (I mean: European films), that are very bad films, are being regarded as great cinema by certain "critics", only because they're non-American. I saw the 8.1 IMDB score for this film and noticed the fact that this was being selected for certain big festivals. Don't let this foo
+------------------------------------------------------------
+
+============================================================
+NOTE
+============================================================
+RNN accuracy ~50% indicates vanishing gradient problem.
+Long sequences (MAX_LEN=200) cause gradients to vanish
+before reaching early tokens. This motivated using LSTM.

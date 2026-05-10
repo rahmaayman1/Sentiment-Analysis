@@ -21,9 +21,9 @@ feature_names = tfidf.get_feature_names_out()
 coefs         = model.coef_[0]
 
 # ===== Save =====
-Path("reports").mkdir(exist_ok=True)
+Path("reports/baseline").mkdir(exist_ok=True)
 
-with open("reports/error_analysis.txt", "w", encoding="utf-8") as f:
+with open("reports/baseline/error_analysis.txt", "w", encoding="utf-8") as f:
 
     # --- Summary ---
     f.write("=" * 60 + "\n")
@@ -63,4 +63,4 @@ with open("reports/error_analysis.txt", "w", encoding="utf-8") as f:
     for coef, word in sorted(zip(coefs, feature_names))[:15]:
         f.write(f"  {word:30s} {coef:.3f}\n")
 
-print(" Saved to reports/error_analysis.txt")
+print(" Saved to reports/baseline/error_analysis.txt")
