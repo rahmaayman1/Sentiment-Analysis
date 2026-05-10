@@ -21,7 +21,7 @@ def load_and_preprocess(path: str):
     return train, val, test
 
 if __name__ == "__main__":
-    train, val, test = load_and_preprocess("data/raw/IMDB_Dataset_CLEANED.csv")
+    train, val, test = load_and_preprocess("data/raw/archive(3).zip")
     
     train.to_csv("data/processed/train.csv", index=False)
     val.to_csv("data/processed/val.csv",   index=False)
