@@ -28,28 +28,54 @@ def train_baseline(train, val, test):
     model.fit(X_train_tfidf, y_train)
 
     # Evaluate
-    print("=== Validation ===")
-    val_preds = model.predict(X_val_tfidf)
-    print(classification_report(y_val, val_preds, target_names=['negative','positive']))
-
-    print("=== Test ===")
+    val_preds  = model.predict(X_val_tfidf)
     test_preds = model.predict(X_test_tfidf)
-    print(classification_report(y_test, test_preds, target_names=['negative','positive']))
+
+    val_report  = classification_report(y_val,  val_preds,  target_names=['negative','positive'])
+    test_report = classification_report(y_test, test_preds, target_names=['negative','positive'])
+
+    print("=== Validation ===")
+    print(val_report)
+    print("=== Test ===")
+    print(test_report)
 
     # Confusion Matrix
     cm = confusion_matrix(y_test, test_preds)
     disp = ConfusionMatrixDisplay(cm, display_labels=['negative','positive'])
     disp.plot(cmap='Blues')
     plt.title("Baseline — Confusion Matrix")
-    os.makedirs("reports/figures", exist_ok=True)
-    plt.savefig("reports/figures/baseline_confusion_matrix.png", dpi=150)
-    plt.show()
+    os.makedirs("reports/baseline", exist_ok=True)
+    plt.savefig("reports/baseline/baseline_confusion_matrix.png", dpi=150)
+    plt.close()
 
-    # Save
+    # Save models
     os.makedirs("models/baseline", exist_ok=True)
     joblib.dump(model, "models/baseline/lr_model.pkl")
     joblib.dump(tfidf, "models/baseline/tfidf.pkl")
-    print(" Model saved")
+
+    # Save results
+    with open("reports/baseline/baseline_results.txt", "w", encoding="utf-8") as f:
+        f.write("=" * 60 + "\n")
+        f.write("BASELINE RESULTS — Logistic Regression + TF-IDF\n")
+        f.write("=" * 60 + "\n\n")
+
+        f.write("Config:\n")
+        f.write(f"  max_features : 10000\n")
+        f.write(f"  ngram_range  : (1, 2)\n")
+        f.write(f"  C            : 1.0\n\n")
+
+        f.write("=" * 60 + "\n")
+        f.write("Validation:\n")
+        f.write("=" * 60 + "\n")
+        f.write(val_report + "\n")
+
+        f.write("=" * 60 + "\n")
+        f.write("Test:\n")
+        f.write("=" * 60 + "\n")
+        f.write(test_report + "\n")
+
+    print(" Saved to reports/baseline/baseline_results.txt")
+    print(" Model saved to models/baseline/")
 
 if __name__ == "__main__":
     train, val, test = load_data()
