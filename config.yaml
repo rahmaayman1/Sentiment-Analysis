@@ -1,0 +1,15 @@
+data:
+  raw_path       : "data/raw/archive(3).zip"
+  processed_path : "data/processed"
+
+bert:
+  model_name  : "distilbert-base-uncased"
+  max_len     : 512
+  batch_size  : 16
+  lr          : 0.00002
+  epochs      : 3
+  dropout     : 0.3
+
+paths:
+  models      : "models"
+  reports     : "reports"

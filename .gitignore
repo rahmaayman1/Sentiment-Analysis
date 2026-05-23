@@ -3,5 +3,8 @@ __pycache__/
 .env
 data/processed/
 data/raw/
-models/rnn/best_rnn.pt
+models/rnn/
 models/baseline/
+models/lstm/
+models/tokenizer/
+models/bert/
