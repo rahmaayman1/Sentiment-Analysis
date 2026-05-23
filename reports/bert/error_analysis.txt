@@ -1,0 +1,86 @@
+============================================================
+ERROR ANALYSIS — BERT (DistilBERT)
+============================================================
+
+Total test samples : 5000
+Total errors       : 303
+Accuracy           : 0.9394
+
+============================================================
+Error breakdown:
+============================================================
+label_name  predicted_name
+negative    positive          159
+positive    negative          144
+
+============================================================
+HIGH CONFIDENCE MISTAKES (top 10)
+============================================================
+
+True      : negative
+Predicted : positive
+Confidence: 0.9988
+Text      : This sleek, sexy movie is a must-see. Only upon multiple viewings can one truly understand the uniqueness of this film. Personally I enjoy the narrator for his intelligent, no subject left untouched, style of narration. The introduction grips you right away, and holds you at the edge of your seat th
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9988
+Text      : Before launching into whether this film is worth your time or not, I should inform you I've never seen another adaptation of Carmen, so if you're looking for a review on how it ranks amongst others, this might not be of much use to you.The only time I've come across Carmen was on the car stereo when
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9987
+Text      : It was only the second year of the Academy but already they were voting politically - Jeanne Eagels' brilliant performance in this creaky early talkie had to make do with an Oscar nom and the statuette went to the worst performance ever to win - Mary Pickford's in COQUETTE. The only existing print w
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9986
+Text      : It is enjoyable and fast-paced. There is no way on Earth that the actor playing Mat could be eighteen. However, the main thing is that he does act eighteen very convincingly. It must be a credit to his audition that he convinced them to cast him. I quite soon accepted him as being a naive young coun
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9986
+Text      : Occasionally one is served a new entrée from foreign films. That is their great attraction. They take from life and serve it up raw. American films, rarely dare to touch the forbidden subjects of society. Too many hang-ups and a morbid fear of financial failure. The Almighty dollar, determines their
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9984
+Text      : First of all, I would like to clarify that I consider this one of the funniest films I have ever seen. I have watched it almost 10 times just because I've wished to spread the deliciously tasteless innards of this film to other unsuspecting victims. It has the captivating essence of a hand-held came
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9984
+Text      : Great movie - especially the music - Etta James - "At Last". This speaks volumes when you have finally found that special someone.
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9982
+Text      : This show is awesome and we have been enjoying it thoroughly. Set in Alaska, I don't agree with the homosexual content on tonight's show. I feel that you are pushing too hard to bring New York to Alaska. Its one thing to have a New Yorker struggling in the Alaska wild, but to try to turn the Alaska 
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9982
+Text      : Sorry to disagree with you, but I found the DKC series to be quite engaging. So much so that I invested in the SNES system and my own copies of the games. This is, mind you, almost ten years after the initial release of DKC 1. The graphics were ground-breaking for their time, the first vector graphi
+------------------------------------------------------------
+
+True      : negative
+Predicted : positive
+Confidence: 0.9981
+Text      : Little Quentin seems to have mastered the art of having the cake and eating it.As usual, the pure sadistic display can be explained as a clever thought-provoking way of sending violence back into the audience's face.Sure, Mr Tarantino. Violence is Baaad. Sadism is Baaad. It is well worth wading in i
+------------------------------------------------------------
+
+============================================================
+FINAL COMPARISON
+============================================================
+  Baseline : 0.9000  ← TF-IDF + Logistic Regression
+  RNN      : 0.5057  ← Vanishing gradient
+  LSTM     : 0.8580  ← Gates solve vanishing gradient
+  BERT     : 0.9394  ← Pretrained transformer

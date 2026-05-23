@@ -1,0 +1,43 @@
+======================================================================
+FINAL MODEL COMPARISON — SENTIMENT ANALYSIS
+======================================================================
+
+Model                    Accuracy    Errors/5000   Note
+----------------------------------------------------------------------
+Baseline (LR + TF-IDF)   0.9000      500           Simple but strong
+RNN                      0.5057      2442          Vanishing gradient
+LSTM                     0.8580      710           Gates solve vanishing gradient
+BERT (DistilBERT)        0.9394      303           Pretrained transformer
+
+======================================================================
+KEY FINDINGS
+======================================================================
+
+1. Baseline vs RNN:
+   Vanilla RNN failed completely due to vanishing gradient on
+   long sequences (MAX_LEN=200). Accuracy stayed at ~50% (random).
+
+2. RNN vs LSTM:
+   LSTM's gates (input, forget, output) solved the vanishing
+   gradient problem. Accuracy jumped from 50% to 85%.
+
+3. LSTM vs Baseline:
+   LSTM (85%) still underperforms Baseline (90%) without
+   pretrained embeddings. TF-IDF captures global word statistics
+   that LSTM needs more data/epochs to learn from scratch.
+
+4. Baseline vs BERT:
+   BERT (93%) outperforms Baseline (90%) by leveraging
+   pretraining on 3.3B words. Understands context, negation,
+   and sarcasm better than bag-of-words approaches.
+
+5. Best model:
+   BERT (DistilBERT) — 93.94% accuracy, 303 errors only.
+   Error breakdown is balanced (159 FP, 144 FN) — no class bias.
+
+======================================================================
+RECOMMENDATION
+======================================================================
+
+   Use BERT for production — best accuracy and balanced errors.
+   Use Baseline for fast inference — 90% accuracy with no GPU needed.
