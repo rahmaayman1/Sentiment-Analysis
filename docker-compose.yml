@@ -1,0 +1,9 @@
+services:
+  sentiment-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./distilbert-local:/app/distilbert-local
+    restart: unless-stopped
