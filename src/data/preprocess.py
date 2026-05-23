@@ -2,6 +2,12 @@ import re
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+import yaml
+with open("config.yaml", "r") as f:
+    config = yaml.safe_load(f)
+
+
+
 def clean_text(text: str) -> str:
     text = re.sub(r'<[^>]+>', '', text)      
     text = re.sub(r'\s+', ' ', text)         
@@ -21,10 +27,11 @@ def load_and_preprocess(path: str):
     return train, val, test
 
 if __name__ == "__main__":
-    train, val, test = load_and_preprocess("data/raw/archive(3).zip")
-    
-    train.to_csv("data/processed/train.csv", index=False)
-    val.to_csv("data/processed/val.csv",   index=False)
-    test.to_csv("data/processed/test.csv", index=False)
-    
-    print(" Saved to data/processed/")
+    train, val, test = load_and_preprocess(config['data']['raw_path'])
+
+    processed_path = config['data']['processed_path']
+    train.to_csv(f"{processed_path}/train.csv", index=False)
+    val.to_csv(f"{processed_path}/val.csv", index=False)
+    test.to_csv(f"{processed_path}/test.csv", index=False)
+
+    print(f" Saved to {processed_path}/")
