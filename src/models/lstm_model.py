@@ -19,7 +19,7 @@ class LSTMModel(nn.Module):
             dropout=dropout if n_layers > 1 else 0,
             bidirectional=True    
         )
-
+  
         self.dropout    = nn.Dropout(dropout)
         # hidden_dim 
         self.classifier = nn.Linear(hidden_dim * 2, 1)
