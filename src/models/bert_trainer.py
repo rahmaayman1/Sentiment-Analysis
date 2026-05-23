@@ -130,7 +130,6 @@ def main():
     optimizer = AdamW(model.parameters(), lr=LR, weight_decay=0.01)
     criterion = nn.BCEWithLogitsLoss()
 
-    # scheduler بيقلل الـ lr تدريجياً
     total_steps = len(train_loader) * EPOCHS
     scheduler   = get_scheduler(
         "linear",
